@@ -29,3 +29,60 @@ div {
     place-content: center;
     display:grid;
 }
+div:first-child {
+    background-color:black;
+    /* transform: translateX(-50%); */
+    /* transform: rotateX(180deg); */
+    /* transform: scaleX(40%); */
+    /* transform:skewX(-10deg); */
+    
+}
+div:nth-child(2) {
+    background-color: yellow;
+    /* transform:translateY(-2rem); */
+    /* transform: rotateY(50deg); */
+    /* transform:scaleY(40%) */
+    /* transform:skewY(-10deg); */
+}
+div:last-child {
+    background-color: green;
+   /*  transform:translate(100%,-5rem); */
+   /* transform: rotateZ(75deg); */
+   /* transform:skew(-10deg,-10deg); */
+}
+div:hover {
+    background-color: firebrick;
+    /* transition-property: background-color;
+    transition-delay: 1s;
+    transition-duration: 2s;
+    transition-timing-function: ease; */
+    transition: all 1s 2s ease;
+}
+div:last-child:hover {
+    transition-property: transform;
+    transform: rotate(360deg);
+}
+.animate {
+    animation: slide;
+    animation-delay: 1s;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform:translateX(600px) rotate(180deg);
+    }
+    60% {
+        transform:translateX(-600px) rotate(-180deg);
+    }
+    100% {
+        transform:translateX(0);
+        background-color: deeppink;
+    }
+}
